@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login-form',
@@ -11,12 +12,17 @@ export class LoginFormComponent implements OnInit {
   formLogin= new FormGroup({
     user:new FormControl(''),
     pass: new FormControl('')
-})  
+})
 
-  constructor() { }
+@Output() userValid = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
-  }
-    validarUsuario(){}
+  constructor(public usuarioService:UsuarioService ) { }
+
+  ngOnInit(): void { }
+  
+  validarUsuario(){
+      //this.usuarioService.validarUsuario(user,pass);
+      this.userValid.emit(true);
+    }
 
 }

@@ -36,7 +36,7 @@ import { ListadoAlumnosComponent } from './components/listadoAlumnos/listado-alu
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule  ],
+    MaterialModule],
   providers: [],
   bootstrap: [AppComponent]
 })

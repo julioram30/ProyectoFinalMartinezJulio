@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatSidenavModule} from '@angular/material/sidenav'; 
+import{MatTableModule} from '@angular/material/table';
 
 
 
@@ -19,7 +20,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule
     
   ]
 })

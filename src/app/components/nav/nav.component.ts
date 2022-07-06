@@ -1,6 +1,4 @@
-import { Component, OnInit,Output,ViewChild } from '@angular/core';
-import { AsidenComponent } from '../asiden/asiden.component';
-import { ListadoAlumnosComponent } from '../listadoAlumnos/listado-alumnos/listado-alumnos.component';
+import { Component, EventEmitter, OnInit,Output,ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -12,10 +10,9 @@ import { ListadoAlumnosComponent } from '../listadoAlumnos/listado-alumnos/lista
 
 export class NavComponent implements OnInit {
 
-  
+  @Output() menuSeleccionado = new EventEmitter<string>();  
 
-  
-  public itemMenu:string[]=["Menu 1","Menu 2","Menu 3","Menu 4","Menu 5","Menu 6"]
+  public itemMenu:string[]=["CRUD","Listado","Salir"]
 
   constructor() { }
 
@@ -28,13 +25,7 @@ export class NavComponent implements OnInit {
 
   public seleccion(menu:string){
 
-    switch(menu) {
-      case 'Menu 1':
-        break;
-       default:
-        alert("otro puto MENU")
-       break; 
-      }
+    this.menuSeleccionado.emit(menu);
 
   }
 }
