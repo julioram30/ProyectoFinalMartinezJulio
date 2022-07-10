@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit,Output,ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit,Output,ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -11,21 +11,20 @@ import { Component, EventEmitter, OnInit,Output,ViewChild } from '@angular/core'
 export class NavComponent implements OnInit {
 
   @Output() menuSeleccionado = new EventEmitter<string>();  
+  @Output() sideSwitchNavBarIut = new EventEmitter<string>();  
+  
 
-  public itemMenu:string[]=["CRUD","Listado","Salir"]
+  public itemMenu:string[]=["CRUD","Listado","Logout"]
 
   constructor() { }
 
   ngOnInit(): void { }
 
   public sideSwitch(){
-    alert("clic")
-
+    this.sideSwitchNavBarIut.emit();
   }
 
   public seleccion(menu:string){
-
     this.menuSeleccionado.emit(menu);
-
   }
 }

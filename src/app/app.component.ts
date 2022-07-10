@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavComponent } from './components/nav/nav.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent {
   public crud:boolean=false;
   public logout:boolean=false;
   public loginOk:boolean=false;
-
+  public sidenav:boolean=false;
+  
 public seleccion(itemMenu:string){
   
   
@@ -28,18 +30,24 @@ public seleccion(itemMenu:string){
         this.display=false;
         this.logout=false;
         break;
-    case "Salir":
+    case "Logout":
         this.logout= false;
         this.display=false;
         this.crud= false;
         this.loginOk=false;
         break;   
-  }
+    }
   
-}  
+  }  
 
 public logOK(){
-  this.loginOk=true;
-}
+    this.loginOk=true;
+  }
+
+public sideSwitch(){
+  alert('otro cambio')
+  this.sidenav=!this.sidenav;
+}  
+
 
 }
