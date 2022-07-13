@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit,Output,ViewChild } from '@angular/core';
-
+import { Component, EventEmitter, OnInit,Output } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -14,7 +14,7 @@ export class NavComponent implements OnInit {
   @Output() sideSwitchNavBarIut = new EventEmitter<string>();  
   
 
-  public itemMenu:string[]=["CRUD","Listado","Logout"]
+ /*  public itemMenu:string[]=["Alumnos","Cursos","Logout"] */
 
   constructor() { }
 
@@ -22,9 +22,15 @@ export class NavComponent implements OnInit {
 
   public sideSwitch(){
     this.sideSwitchNavBarIut.emit();
+    //this.router.navigate(['/dashboard']);
+    
   }
 
-  public seleccion(menu:string){
-    this.menuSeleccionado.emit(menu);
-  }
+  // public seleccion(menu:string){
+  //   this.menuSeleccionado.emit(menu);
+  // }
 }
+
+
+
+

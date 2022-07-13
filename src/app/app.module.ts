@@ -13,10 +13,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginFormComponent } from './components/login/login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { MaterialModule } from './modules/material/material.module';
-import { ListadoAlumnosComponent } from './components/listadoAlumnos/listado-alumnos/listado-alumnos.component';
-
+import { FormAlumnosModule } from './modules/alumnos/formAlumnos/FormAlumnosModule';
+import { AlumnosModule } from './modules/alumnos/alumnos.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,10 +24,8 @@ import { ListadoAlumnosComponent } from './components/listadoAlumnos/listado-alu
     MainComponent,
     FooterComponent,
     LoginFormComponent,
-    AsidenComponent,
-    ListadoAlumnosComponent
-    
-    
+    AsidenComponent
+  
     
   ],
   imports: [
@@ -36,7 +33,9 @@ import { ListadoAlumnosComponent } from './components/listadoAlumnos/listado-alu
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule],
+    MaterialModule,
+    FormAlumnosModule,
+    AlumnosModule],
   providers: [],
   bootstrap: [AppComponent]
 })

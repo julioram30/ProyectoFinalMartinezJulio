@@ -6,20 +6,21 @@
     </div>
     <div class="h-screen" >
         <div class="flex flex-row">
-            <div *ngIf="sidenav"><app-asiden class="h-1/4"></app-asiden></div>
-            
-            <div id="comp-crud" *ngIf="display">
+            <!-- <div *ngIf="sidenav"><app-asiden class="h-1/4"></app-asiden></div> -->
+            <router-outlet></router-outlet>
+            <!-- <div id="comp-crud" *ngIf="display">
                 <app-main class="h-3/4"></app-main>
-            </div>
-            <div id="comp-list" *ngIf="crud" class="flex justify-center items-center">
+            </div> -->
+            <!-- <div id="comp-list" *ngIf="crud" class="flex justify-center items-center">
                 <app-listado-alumnos ></app-listado-alumnos>
-            </div>
-            <div id="logout" *ngIf="logout">
+            </div> -->
+            <!-- <div id="logout" *ngIf="logout">
                 <app-main class="h-3/4"></app-main>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="w-full align-bottom">
         <app-footer></app-footer>
     </div>
+    
 </div>
