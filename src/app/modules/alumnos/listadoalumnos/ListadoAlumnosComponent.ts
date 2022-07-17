@@ -18,6 +18,7 @@ export class ListadoAlumnosComponent implements OnInit {
   tableDataSource$: Observable<MatTableDataSource<Alumno>>;
 
   constructor(public listaAlumnos: AlumnosService) {
+    console.log('listado alumnos')
     this.tableDataSource$ = this.listaAlumnos.listar().pipe(tap((alumnos) => console.log(alumnos)),
       map((alumnos) => new MatTableDataSource<Alumno>(alumnos)));
   }

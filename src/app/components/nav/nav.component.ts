@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit,Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,14 +11,16 @@ import { Router } from '@angular/router';
 
 export class NavComponent implements OnInit {
 
-    @Output() sideSwitchNavBarIut = new EventEmitter<string>();  
+    @Output() sideSwitchNavBarOutPut = new EventEmitter<string>(); 
+    @Input() SidenavStatus!: boolean 
   
   constructor(private router:Router) { }
 
   ngOnInit(): void { }
 
   public sideSwitch(){
-    this.sideSwitchNavBarIut.emit();
+    alert(this.SidenavStatus)
+    this.sideSwitchNavBarOutPut.emit();
      
   }
 

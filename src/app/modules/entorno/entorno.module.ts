@@ -5,12 +5,15 @@ import { EntornoComponent } from './entorno.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { NavComponent } from 'src/app/components/nav/nav.component';
 import { MaterialModule } from '../material/material.module';
+import { EntornoRoutingModule } from './entorno.routing.module';
+
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    EntornoRoutingModule
   ],
   declarations: [
     EntornoComponent,

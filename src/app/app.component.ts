@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private router: Router){}
   public logOK(){
-     this.loginOk=true;
+     this.loginOk=!this.loginOk;
      this.router.navigate(['/entorno']);}
 
   // public logOut(){

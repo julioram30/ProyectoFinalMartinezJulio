@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './modules/material/material.module';
@@ -13,20 +12,17 @@ import { FormAlumnosModule } from './modules/alumnos/formAlumnos/FormAlumnosModu
 import { AlumnosModule } from './modules/alumnos/alumnos.module';
 import { EntornoModule } from './modules/entorno/entorno.module';
 import { SeguridadModule } from './modules/seguridad/seguridad.module';
-import { LoginFormComponent } from './modules/seguridad/login-form/login-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AsideComponent,
-    AsidenComponent,
-    LoginFormComponent
-
+    AsidenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormAlumnosModule,
@@ -34,8 +30,7 @@ import { LoginFormComponent } from './modules/seguridad/login-form/login-form.co
     EntornoModule,
     SeguridadModule
   ],
-    
-    
+ 
   providers: [],
   bootstrap: [AppComponent]
 })
