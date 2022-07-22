@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-nav',
@@ -14,11 +15,13 @@ export class NavComponent implements OnInit {
   
   menuItems:string[]=['Alumnos  ',' Cursos'];
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private menuServicio:MenuService) { }
 
   ngOnInit(): void { }
 
-  menuClik(){ }
+  menuClik(){
+    this.menuItems=this.menuServicio.getMenu();
+   }
 
   // public sideSwitch(){
   //   alert(this.SidenavStatus)
