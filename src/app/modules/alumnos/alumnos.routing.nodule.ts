@@ -5,7 +5,7 @@ import { FormAlumnosComponent } from './formAlumnos/formAlumnos.component';
 import { ListadoAlumnosComponent } from './listadoalumnos/ListadoAlumnosComponent';
 
 const routes: Routes = [
-  { path:"",component:AlumnosComponent },
+  { path:'',component:AlumnosComponent },
   { path:"listado", component:ListadoAlumnosComponent },
   // {path:"formalumnos",component:FormAlumnosComponent}
 ];

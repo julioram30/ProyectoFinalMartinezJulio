@@ -14,16 +14,16 @@ export class ListadoAlumnosComponent implements OnInit {
 
   public rptAumnos?: Alumno;
 
-  displayedColumnsTable = ['index', 'apellido', 'nombre', 'edad', 'nota', 'id'];
-  tableDataSource$: Observable<MatTableDataSource<Alumno>>;
+  displayedColumnsTable = ['index', 'apellido', 'nombre','email', 'edad', 'nota', 'id'];
+  
+  tableDataSource$: Observable<MatTableDataSource<Alumno>> | null = null;
 
-  constructor(public listaAlumnos: AlumnosService) {
-    console.log('listado alumnos')
-    this.tableDataSource$ = this.listaAlumnos.listar().pipe(tap((alumnos) => console.log(alumnos)),
+  constructor(public listaAlumnos: AlumnosService) { }
+
+  ngOnInit(): void {
+    this.tableDataSource$ = this.listaAlumnos.getAlumnos().pipe(tap((alumnos) => console.log(alumnos)),
       map((alumnos) => new MatTableDataSource<Alumno>(alumnos)));
-  }
-
-  ngOnInit(): void { }
+   }
 
 
 }

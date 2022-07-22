@@ -24,6 +24,11 @@
                 <th mat-header-cell *matHeaderCellDef>col 2 </th> <!-- {{"userListComponent.table.lastNameColumn" | translate}} </th> -->
                 <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
               </ng-container>
+
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>col 3 </th><!-- {{"userListComponent.table.emailColumn" | translate}} </th> -->
+                <td mat-cell *matCellDef="let element"> {{element.email} </td>
+              </ng-container>
         
               <!-- email Column -->
               <ng-container matColumnDef="edad">

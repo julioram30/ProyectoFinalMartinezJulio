@@ -7,22 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 
-
-
 export class NavComponent implements OnInit {
 
-    @Output() sideSwitchNavBarOutPut = new EventEmitter<string>(); 
-    @Input() SidenavStatus!: boolean 
+    // @Output() sideSwitchNavBarOutPut = new EventEmitter<string>(); 
+    // @Input() SidenavStatus!: boolean 
   
+  menuItems:string[]=['Alumnos  ',' Cursos'];
+
   constructor(private router:Router) { }
 
   ngOnInit(): void { }
 
-  public sideSwitch(){
-    alert(this.SidenavStatus)
-    this.sideSwitchNavBarOutPut.emit();
+  menuClik(){ }
+
+  // public sideSwitch(){
+  //   alert(this.SidenavStatus)
+  //   this.sideSwitchNavBarOutPut.emit();
      
-  }
+  // }
 
   public logOut(){
         this.router.navigate(['/']);   

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
+
 
 @Component({
   selector: 'app-entorno',
@@ -7,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntornoComponent implements OnInit {
 
-  constructor() { }
+  @Output() menuOut = new EventEmitter;
+  @Input() menuIn:string=''
+  
+  constructor( public switchSideBar:MenuService ) { }
 
-  ngOnInit() {
-  }
-  
-  
+  ngOnInit() { }
+
+  cjange() {
+    this.menuOut.emit(this.menuIn);
+   }
   
 }  
 
