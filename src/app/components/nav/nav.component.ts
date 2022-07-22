@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,22 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 
-
-
 export class NavComponent implements OnInit {
 
-    @Output() sideSwitchNavBarOutPut = new EventEmitter<string>(); 
-    @Input() SidenavStatus!: boolean 
+    // @Output() sideSwitchNavBarOutPut = new EventEmitter<string>(); 
+    // @Input() SidenavStatus!: boolean 
   
-  constructor(private router:Router) { }
+  menuItems:string[]=['Alumnos  ',' Cursos'];
+
+  constructor(private router:Router, private menuServicio:MenuService) { }
 
   ngOnInit(): void { }
 
-  public sideSwitch(){
-    alert(this.SidenavStatus)
-    this.sideSwitchNavBarOutPut.emit();
+  menuClik(){
+    this.menuItems=this.menuServicio.getMenu();
+   }
+
+  // public sideSwitch(){
+  //   alert(this.SidenavStatus)
+  //   this.sideSwitchNavBarOutPut.emit();
      
-  }
+  // }
 
   public logOut(){
         this.router.navigate(['/']);   

@@ -8,11 +8,11 @@ import { ListadoAlumnosComponent } from './modules/alumnos/listadoalumnos/Listad
 const routes: Routes = [
   
   {path:"entorno",loadChildren:() => import("./modules/entorno/entorno.module").then((m)=>m.EntornoModule)}, //component:EntornoComponent},
-  {path:"alumnos",loadChildren:() => import("./modules/alumnos/alumnos.module").then((m)=> m.AlumnosModule)}, // {component:AlumnosComponent},
+  //{path:"alumnos",loadChildren:() => import("./modules/alumnos/alumnos.module").then((m)=> m.AlumnosModule)}, // {component:AlumnosComponent},
   //{path:"listados",component:ListadoAlumnosComponent},
   //{path:"alumnosabm",component:FormAlumnosComponent},
-  {path:"",component:LoginFormComponent},
-  {path:"**",redirectTo:""}
+  {path:"", loadChildren:() => import("./modules/seguridad/seguridad.module").then((m)=>m.SeguridadModule)},  //component:LoginFormComponent},
+ // {path:"**",redirectTo:""}
 
 ];
 
