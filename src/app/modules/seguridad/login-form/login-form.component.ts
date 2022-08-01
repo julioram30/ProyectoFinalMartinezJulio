@@ -21,8 +21,9 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void { }
   
   validarUsuario(){
-      //this.usuarioService.validarUsuario(user,pass);
-      this.userValid.emit(true);
+    alert('iniciando sesion')
+      this.usuarioService.validarUsuario('admin','admin1');
+      //this.userValid.emit(true);
     }
 
 }

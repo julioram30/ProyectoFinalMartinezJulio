@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit,Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 
@@ -20,6 +20,7 @@ export class NavComponent implements OnInit {
   ngOnInit(): void { }
 
   menuClik(){
+    
     this.menuItems=this.menuServicio.getMenu();
    }
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Alumno } from '../models/alumno.model';
 
 @Injectable({
@@ -115,7 +116,7 @@ export class AlumnosService {
 
  //getAlumnos(nombre?:string): Observable<Alumno[]>{
   getAlumnos(nombre?:string): Observable<Alumno[]>{ 
-  return this.httpClient.get<Alumno[]>('https://62d7570b49c87ff2af355a28.mockapi.io/coder/Alumnos'
+  return this.httpClient.get<Alumno[]>( environment.urlMockApi +'Alumnos'
   // ,{headers: new HttpHeaders({
   //   "authorization": 'Este es el token'
   // })}).pipe(

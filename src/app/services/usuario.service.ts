@@ -1,5 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Usuario } from '../models/usuario.model';
 
 @Injectable({
@@ -46,11 +48,28 @@ usuarios:Usuario[]=
   }
  ]
 
-  constructor() { }
-
-public validarUsuario(usuario:string,clave:string){}
-
 userSelected$ = new Subject<Usuario | null>();
-  users$ = new BehaviorSubject<Usuario[]>(this.usuarios);
+users$ = new BehaviorSubject<Usuario[]>(this.usuarios);
+url:string=environment.urlMockApi+'Usuarios/';
+  constructor(private httpUsuario:HttpClient) { }
+
+public validarUsuario(usuario:string,clave:string): Observable<Usuario | null>{
+  return this.httpUsuario.get<Usuario[]>(this.url ,{headers: new HttpHeaders({
+    "authorization": 'Este es el token'  })}
+  ).pipe(
+    map((users) => {
+      return users.find(user =>  user.nombre == usuario && user.clave == clave) || null
+    }),
+    catchError((error) => {
+      console.log(error)
+      throw new Error()
+    })
+  );
+}
+
+
+
+
+
 
 }
