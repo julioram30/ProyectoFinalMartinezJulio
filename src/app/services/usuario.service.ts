@@ -9,6 +9,7 @@ import { Usuario } from '../models/usuario.model';
 })
 export class UsuarioService {
 
+  
 usuarios:Usuario[]=
 [
   {
@@ -58,6 +59,7 @@ public validarUsuario(usuario:string,clave:string): Observable<Usuario | null>{
     "authorization": 'Este es el token'  })}
   ).pipe(
     map((users) => {
+      
       return users.find(user =>  user.nombre == usuario && user.clave == clave) || null
     }),
     catchError((error) => {

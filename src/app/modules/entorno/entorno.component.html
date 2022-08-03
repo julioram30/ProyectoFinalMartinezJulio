@@ -2,7 +2,7 @@
 <div class="flex flex-col justify-between h-screen">
 
     <div class="h-16">
-        <app-nav ></app-nav>  <!-- ([SidenavStatus]="drawer.opened" (sideSwitchNavBarOutPut))="drawer.toggle()" -->
+        <app-nav [SidenavStatus]="drawer.opened" (toggleSidenavButton)="drawer.toggle()"></app-nav>  <!-- ([SidenavStatus]="drawer.opened" (sideSwitchNavBarOutPut))="drawer.toggle()" -->
     </div>
  <div >
      <div>
@@ -11,9 +11,10 @@
               class="w-52 bg-red-700"
               mode="side">
         <!--bg-primary-50 dark:bg-default-600 transition-colors ease-in-out duration-500 border-r border-primary-200 dark:border-default-700-->
+        <!-- <div><app-asiden class="h-1/4"></app-asiden></div> -->
         </mat-drawer>
         </mat-drawer-container>
-         <!-- <div><app-asiden class="h-1/4"></app-asiden></div> -->
+         
          
          <!-- <div id="comp-crud" *ngIf="display">
              <app-main class="h-3/4"></app-main>

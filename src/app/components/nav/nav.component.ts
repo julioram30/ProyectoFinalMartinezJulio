@@ -10,8 +10,8 @@ import { MenuService } from 'src/app/services/menu.service';
 
 export class NavComponent implements OnInit {
 
-    // @Output() sideSwitchNavBarOutPut = new EventEmitter<string>(); 
-    // @Input() SidenavStatus!: boolean 
+    @Output('toggleSidenavButton') sideSwitchNavBarOutPut = new EventEmitter<string>(); 
+    @Input() SidenavStatus!: boolean 
   
   menuItems:string[]=['Alumnos  ',' Cursos'];
 
@@ -24,14 +24,12 @@ export class NavComponent implements OnInit {
     this.menuItems=this.menuServicio.getMenu();
    }
 
-  // public sideSwitch(){
-  //   alert(this.SidenavStatus)
-  //   this.sideSwitchNavBarOutPut.emit();
-     
-  // }
-
   public logOut(){
         this.router.navigate(['/']);   
+  }
+
+  toggleSidenavButton(){
+    this.sideSwitchNavBarOutPut.emit();
   }
 }
 

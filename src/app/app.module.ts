@@ -6,19 +6,20 @@ import { MaterialModule } from './modules/material/material.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AsideComponent } from './components/aside/aside.component';
-import { AsidenComponent } from './components/asiden/asiden.component';
+// import { AsideComponent } from './components/aside/aside.component';
+// import { AsidenComponent } from './components/asiden/asiden.component';
 import { FormAlumnosModule } from './modules/alumnos/formAlumnos/FormAlumnosModule';
 import { AlumnosModule } from './modules/alumnos/alumnos.module';
 import { EntornoModule } from './modules/entorno/entorno.module';
 import { SeguridadModule } from './modules/seguridad/seguridad.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AsideComponent,
-    AsidenComponent
+    // AsideComponent,
+    // AsidenComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,8 @@ import { SeguridadModule } from './modules/seguridad/seguridad.module';
     FormAlumnosModule,
     AlumnosModule,
     EntornoModule,
-    SeguridadModule
+    SeguridadModule,
+    HttpClientModule
   ],
  
   providers: [],

@@ -6,6 +6,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { NavComponent } from 'src/app/components/nav/nav.component';
 import { MaterialModule } from '../material/material.module';
 import { EntornoRoutingModule } from './entorno.routing.module';
+import { AsidenComponent } from 'src/app/components/asiden/asiden.component';
 
 
 
@@ -18,7 +19,8 @@ import { EntornoRoutingModule } from './entorno.routing.module';
   declarations: [
     EntornoComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    AsidenComponent
   ]
 })
 export class EntornoModule { }
