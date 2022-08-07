@@ -13,6 +13,7 @@ import { AlumnosModule } from './modules/alumnos/alumnos.module';
 import { EntornoModule } from './modules/entorno/entorno.module';
 import { SeguridadModule } from './modules/seguridad/seguridad.module';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     AlumnosModule,
     EntornoModule,
     SeguridadModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
  
   providers: [],

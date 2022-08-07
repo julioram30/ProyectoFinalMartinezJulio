@@ -1,30 +1,34 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { MatSidenav } from '@angular/material/sidenav';
+import { AlumnosComponent } from 'src/app/modules/alumnos/alumnos.component';
+import { CursosComponent } from 'src/app/modules/cursos/cursos.component';
+import { LoginFormComponent } from 'src/app/modules/seguridad/login-form/login-form.component';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-asiden',
   templateUrl: './asiden.component.html',
   styleUrls: ['./asiden.component.css']
 })
+
 export class AsidenComponent implements OnInit {
 
+  @ViewChild('sidenav')
+  public sidenav!: MatSidenav;
+  routes =  [
+    { path: 'alumnos', component: AlumnosComponent, label: 'Alumnos' },
+    { path: 'cursos', component: CursosComponent, label: 'Cursos' }, 
+    { path: 'usuarios', component: LoginFormComponent, label: 'Usuarios' }
+   ];
+
   
-  // options = this._formBuilder.group({
-  //   bottom: 0,
-  //   fixed: false,
-  //   top: 0,
-  // });
 
-  // constructor(private _formBuilder: FormBuilder) {}
+  constructor(private sideNavService: MenuService) { }
+  
+  ngOnInit() { 
+   this.sideNavService.sideNavToggleSubject.subscribe(()=> {
+      this.sidenav.toggle();
+    });
 
-  // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
-
-  ngOnInit(): void {
-  }
-
-  toggle(){
-    
-    alert("aside");
-  }
-
+}
 }

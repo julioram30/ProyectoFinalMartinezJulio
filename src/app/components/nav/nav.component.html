@@ -1,13 +1,13 @@
 <nav>
-  <mat-toolbar color="secondary" class="justify-between">
+  <mat-toolbar color="primary" class="justify-between">
     <div class="flex items-center">
-      <button mat-icon-button class="example-icon" >
+      <button mat-icon-button class="example-icon" (click)="menuClik()" >
         <mat-icon>menu</mat-icon>
       </button>
       <span>JAM</span>
     </div>
     <div class="flex items-center">
-      <button mat-button (click)="menuClik">{{menuItems}}</button>
+      <!-- <button mat-button (click)="menuClik">{{menuItems}}</button> -->
       <!-- <button mat-button [matMenuTriggerFor]="cursos">Cursos</button>
         <mat-menu #cursos="matMenu">
           <button mat-menu-item>ABM</button>

@@ -5,8 +5,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
-import {MatSidenavModule} from '@angular/material/sidenav'; 
+import {MatSidenavContent, MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -21,7 +22,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatInputModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule
     
   ]
 })

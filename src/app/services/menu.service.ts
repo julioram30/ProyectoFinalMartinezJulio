@@ -1,39 +1,28 @@
 import { Injectable } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
   
-  // private sidenav: MatSidenav;
-
-
-  //   public setSidenav(sidenav: MatSidenav) {
-  //       this.sidenav = sidenav;
-  //   }
-
-  //   public open() {
-  //       return this.sidenav.open();
-  //   }
-
-
-  //   public close() {
-  //       return this.sidenav.close();
-  //   }
-
-  //   public toggle(): void {
-  //   this.sidenav.toggle();
-  //  }
+  public sideNavToggleSubject: BehaviorSubject<any> = new BehaviorSubject(null);
   
-   itemsMenu:string[]=[''];
+  itemsMenu:string[]=[''];
+  
   constructor() { }
 
- getMenu(){ 
+ 
+  getMenu(){ 
   return this.itemsMenu;
  }
 
+ 
  setMenu(items:string[]){ 
   this.itemsMenu=items;
  }
+
+ public toggle() {
+  return this.sideNavToggleSubject.next(null);
+} 
 }

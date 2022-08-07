@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { MenuService } from 'src/app/services/menu.service';
 
 
@@ -9,17 +10,12 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class EntornoComponent implements OnInit {
 
-  @Output() menuOut = new EventEmitter;
-  @Input() menuIn:string=''
-  
-  constructor( public switchSideBar:MenuService ) { }
+  constructor( ) { }
 
-  ngOnInit() { }
-
-  cjange() {
-    this.menuOut.emit(this.menuIn);
-   }
+  ngOnInit() {
   
+    }
+
 }  
 
 

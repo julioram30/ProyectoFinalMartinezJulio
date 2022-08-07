@@ -1,22 +1,16 @@
 <mat-sidenav-container class="example-container" >
-    <mat-sidenav #sidenav mode="side" closed class="example-sidenav" [fixedInViewport]="false"
+    <mat-sidenav #sidenav mode="side" closed class="secondary" [fixedInViewport]="false"
     fixedTopGap="0" fixedBottomGap="0">
-                
+    
+    <mat-selection-list #items [multiple]="false">
+      <mat-list-option *ngFor="let opt of routes" [routerLink]="opt.path"  [value]="opt.label">
+        {{opt.label}}
+      </mat-list-option>
+    </mat-selection-list>
+    
+    <p>
+      Option : {{items.selectedOptions.selected[0]?.value}}
+    </p>
     </mat-sidenav>
 
-    <!-- [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
-    [fixedBottomGap]="options.value.bottom">
-{{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav -->
-    <!-- <mat-sidenav-content [formGroup]="options">
-      <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
-      <p><mat-form-field appearance="fill">
-        <mat-label>Top gap</mat-label>
-        <input matInput type="number" formControlName="top">
-      </mat-form-field></p>
-      <p><mat-form-field appearance="fill">
-        <mat-label>Bottom gap</mat-label>
-        <input matInput type="number" formControlName="bottom">
-      </mat-form-field></p>
-      <p><button mat-button (click)="sidenav.toggle()" >Toggle</button></p>
-    </mat-sidenav-content> -->
   </mat-sidenav-container>
