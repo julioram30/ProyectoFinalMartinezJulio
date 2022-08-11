@@ -5,9 +5,9 @@ import { CursosComponent } from '../cursos/cursos.component';
 import { EntornoComponent } from './entorno.component';
 
 const routes: Routes = [
- {path:"",component:EntornoComponent},
+ {path:"",component:EntornoComponent,children:[
  {path:"alumnos",component:AlumnosComponent},
- {path:"cursos",component:CursosComponent}
+ {path:"cursos",component:CursosComponent}]}
 
 ];
 

@@ -1,20 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { MenuService } from 'src/app/services/menu.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-entorno',
   templateUrl: './entorno.component.html',
   styleUrls: ['./entorno.component.css']
 })
-export class EntornoComponent implements OnInit {
+export class EntornoComponent  {
 
-  constructor( ) { }
-
-  ngOnInit() {
   
-    }
+  constructor(private router:Router){}
+
+  
+  seleccionado(sel:string){
+        console.log(sel);
+        this.router.navigate([sel]);
+    }  
 
 }  
 

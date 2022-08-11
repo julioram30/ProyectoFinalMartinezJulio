@@ -6,8 +6,6 @@ import { MaterialModule } from './modules/material/material.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { AsideComponent } from './components/aside/aside.component';
-// import { AsidenComponent } from './components/asiden/asiden.component';
 import { FormAlumnosModule } from './modules/alumnos/formAlumnos/FormAlumnosModule';
 import { AlumnosModule } from './modules/alumnos/alumnos.module';
 import { EntornoModule } from './modules/entorno/entorno.module';
@@ -18,9 +16,7 @@ import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // AsideComponent,
-    // AsidenComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

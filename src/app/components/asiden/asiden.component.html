@@ -1,16 +1,19 @@
 <mat-sidenav-container class="example-container" >
-    <mat-sidenav #sidenav mode="side" closed class="secondary" [fixedInViewport]="false"
-    fixedTopGap="0" fixedBottomGap="0">
+    <mat-sidenav #sidenav mode="side" closed class="secondary">
     
     <mat-selection-list #items [multiple]="false">
+      <!-- redirec directo desde el sidenav 
       <mat-list-option *ngFor="let opt of routes" [routerLink]="opt.path"  [value]="opt.label">
+        {{opt.label}}
+      </mat-list-option> -->
+      <mat-list-option *ngFor="let opt of routes" (click)="seleccion(opt.path)">
         {{opt.label}}
       </mat-list-option>
     </mat-selection-list>
     
-    <p>
+    <!-- <p>
       Option : {{items.selectedOptions.selected[0]?.value}}
-    </p>
+    </p> -->
     </mat-sidenav>
 
   </mat-sidenav-container>
