@@ -1,0 +1,19 @@
+
+<div class="flex flex-col justify-between h-screen primary">
+
+    <!-- <div class="h-16"> -->
+    <!-- </div> -->
+    
+    <div>
+        <app-nav></app-nav>
+        <app-asiden (sidenavSelect)="seleccionado($event)"></app-asiden>
+
+            <router-outlet></router-outlet>
+        <!-- </mat-sidenav-content> -->
+        <!-- <div> -->
+            <app-footer class="align-bottom"></app-footer>
+    </div>
+    
+</div>
+
+

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -16,13 +18,16 @@ export class LoginFormComponent implements OnInit {
 
 @Output() userValid = new EventEmitter<boolean>();
 
+  
   constructor(public usuarioService:UsuarioService ) { }
 
   ngOnInit(): void { }
   
   validarUsuario(){
-      //this.usuarioService.validarUsuario(user,pass);
-      this.userValid.emit(true);
+    const usr = new Observable<Usuario>(observer =>{
+    this.usuarioService.validarUsuario('admin','admin1')})
+    
+    this.userValid.emit(true);
     }
 
 }

@@ -1,26 +1,40 @@
 <nav>
-  <mat-toolbar color="secondary">
-    
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
-    (click)="sideSwitch()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>JAM</span>
-    
-    <span class="example-spacer"></span>
-    <button mat-button *ngFor="let menu of itemMenu" (click)="seleccion(menu)">{{menu}}</button>
-    <div class="items-end">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>search</mat-icon>
-      </button>  
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
+  <mat-toolbar color="primary" class="justify-between">
+    <div class="flex items-center">
+      <button mat-icon-button class="example-icon" (click)="menuClik()" >
+        <mat-icon>menu</mat-icon>
       </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
+      <span>JAM</span>
     </div>
+    <div class="flex items-center">
+      <!-- <button mat-button (click)="menuClik">{{menuItems}}</button> -->
+      <!-- <button mat-button [matMenuTriggerFor]="cursos">Cursos</button>
+        <mat-menu #cursos="matMenu">
+          <button mat-menu-item>ABM</button>
+          <button mat-menu-item>Listado</button>
+        </mat-menu>
+          <button mat-button [matMenuTriggerFor]="alumnos">Alumnos</button>
+        <mat-menu #alumnos="matMenu">
+          <button mat-menu-item routerLink="alumnosabm">ABM</button>
+          <button mat-menu-item routerLink="alumnos/listados"> Listado </button>
+        </mat-menu> -->
 
+      <!-- <span class="example-spacer"></span>
+      <button mat-button *ngFor="let menu of itemMenu" (click)="seleccion(menu)">{{menu}}</button> -->
+    </div>
+    <div class="flex items-center">
+      <div class="items-end">
+        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>search</mat-icon>
+        </button>  
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button> -->
+        <button (click)="logOut()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+  </div>
   </mat-toolbar>
 </nav>
 

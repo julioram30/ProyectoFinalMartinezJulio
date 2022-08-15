@@ -1,25 +1,6 @@
-<app-login-form *ngIf="!loginOk" (userValid)="loginOk=true"></app-login-form>
-<div id="principal" *ngIf="loginOk" >
-
-<div class="w-auto">
-     <div><app-nav (menuSeleccionado)="seleccion($event)"></app-nav> 
-    </div>
-    <div class="h-screen" >
-        <div class="flex flex-row">
-            <!-- <div><app-asiden class="h-1/4"></app-asiden></div> -->
-            
-            <div id="comp-crud" *ngIf="display">
-                <app-main class="h-3/4"></app-main>
-            </div>
-            <div id="comp-list" *ngIf="crud" class="flex justify-center items-center">
-                <app-listado-alumnos ></app-listado-alumnos>
-            </div>
-            <div id="logout" *ngIf="logout">
-                <app-main class="h-3/4"></app-main>
-            </div>
-        </div>
-    </div>
-    <div class="w-full align-bottom">
-        <app-footer></app-footer>
-    </div>
+<app-login-form *ngIf="!loginOk" (userValid)="logOK()"></app-login-form>
+<div *ngIf="loginOk" >
+    <router-outlet class="flex-row w-full h-full"></router-outlet>
 </div>
+
+

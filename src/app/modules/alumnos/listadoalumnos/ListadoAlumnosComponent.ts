@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
-
 import { Alumno } from 'src/app/models/alumno.model';
 import { AlumnosService } from 'src/app/services/alumnos.service';
+
 
 @Component({
   selector: 'app-listado-alumnos',
@@ -12,17 +12,18 @@ import { AlumnosService } from 'src/app/services/alumnos.service';
 })
 export class ListadoAlumnosComponent implements OnInit {
 
-  public rptAumnos?:Alumno;
+  public rptAumnos?: Alumno;
 
-  displayedColumnsTable = ['index', 'apellido', 'nombre', 'edad' ,'nota', 'id']
-  tableDataSource$: Observable<MatTableDataSource<Alumno>>;
+  displayedColumnsTable = ['index', 'apellido', 'nombre','email', 'edad', 'nota', 'id'];
   
-  constructor(public listaAlumnos:AlumnosService) { 
-    this.tableDataSource$ = this.listaAlumnos.listar().pipe(tap((alumnos) => console.log(alumnos)),
-                                                            map((alumnos) => new MatTableDataSource<Alumno>(alumnos)));
-  }
+  tableDataSource$: Observable<MatTableDataSource<Alumno>> | null = null;
 
-  ngOnInit(): void { }
+  constructor(public listaAlumnos: AlumnosService) { }
 
-  
+  ngOnInit(): void {
+    this.tableDataSource$ = this.listaAlumnos.getAlumnos().pipe(tap((alumnos) => console.log(alumnos)),
+      map((alumnos) => new MatTableDataSource<Alumno>(alumnos)));
+   }
+
+
 }

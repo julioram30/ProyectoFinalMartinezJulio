@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,40 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Julio A. Marines CRUD Alumnos y cursos';
-  public menuSelec :string = '';
-  public blank:boolean=true;
-  public display:boolean=false;
-  public crud:boolean=false;
-  public logout:boolean=false;
-  public loginOk:boolean=false;
+  title = 'Julio A. Marines Administracion Alumnos y cursos';
+  
+  loginOk:boolean = false;
 
-public seleccion(itemMenu:string){
-  
-  
-  switch(itemMenu){
-    case "CRUD":
-      this.display= true;
-      this.crud= false;
-      this.logout=false;
-      break;
-    case "Listado":
-        this.crud= true;
-        this.display=false;
-        this.logout=false;
-        break;
-    case "Salir":
-        this.logout= false;
-        this.display=false;
-        this.crud= false;
-        this.loginOk=false;
-        break;   
-  }
-  
-}  
+  constructor(private router: Router){}
+  public logOK(){
+     this.loginOk=!this.loginOk;
+     this.router.navigate(['/entorno']);}
 
-public logOK(){
-  this.loginOk=true;
-}
+  // public logOut(){
+  //    this.loginOk=false;
+  //    this.router.navigate(['/']);
+  //  }
 
 }

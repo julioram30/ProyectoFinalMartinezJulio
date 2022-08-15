@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit,Output,ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit,Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,26 +8,32 @@ import { Component, EventEmitter, OnInit,Output,ViewChild } from '@angular/core'
   styleUrls: ['./nav.component.css']
 })
 
-
-
 export class NavComponent implements OnInit {
 
-  @Output() menuSeleccionado = new EventEmitter<string>();  
+  //   @Output('') sideSwitchNavBarOutPut = new EventEmitter<string>(); 
+  //   @Input() SidenavStatus!: boolean 
+  
+  // menuItems:string[]=['Alumnos  ',' Cursos'];
 
-  public itemMenu:string[]=["CRUD","Listado","Salir"]
-
-  constructor() { }
+  constructor(private router:Router, private menuServicio:MenuService) { }
 
   ngOnInit(): void { }
 
-  public sideSwitch(){
-    alert("clic")
+  menuClik(){
+      this.menuServicio.toggle();
+   }
 
+  public logOut(){
+        this.router.navigate(['/']);   
   }
 
-  public seleccion(menu:string){
+  // toggleSidenavButton(){
+  //   this.sideSwitchNavBarOutPut.emit();
+  // }
 
-    this.menuSeleccionado.emit(menu);
-
-  }
+  
 }
+
+
+
+
